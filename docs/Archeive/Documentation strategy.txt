@@ -1,0 +1,39 @@
+📁 Project-Pulse
+│
+├── 📁 00_Project_Management
+│      01_Project_Charter.md
+│      02_Project_Goals.md
+│      03_Project_Rules.md
+│
+├── 📁 01_Product
+│      01_PRD.md
+│      02_User_Personas.md
+│      03_User_Journey.md
+│      04_Feature_List.md
+│      05_Roadmap.md
+│
+├── 📁 02_Design
+│      01_Design_System.md
+│      02_Color_System.md
+│      03_Typography.md
+│      04_Icons.md
+│      05_Animations.md
+│      06_Spacing.md
+│
+├── 📁 03_Architecture
+│      01_System_Architecture.md
+│      02_MVVM.md
+│      03_Folder_Structure.md
+│      04_Data_Flow.md
+│
+├── 📁 04_Development
+│      Coding_Standards.md
+│      Git_Workflow.md
+│      Branching.md
+│      Commit_Rules.md
+│
+├── 📁 05_Testing
+│
+├── 📁 06_Release
+│
+└── README.md

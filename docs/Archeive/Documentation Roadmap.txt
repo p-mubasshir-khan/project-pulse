@@ -1,0 +1,43 @@
+📁 Project Pulse
+│
+├── 📘 00. README
+│
+├── 📘 01. Project Charter
+│
+├── 📘 02. Vision & Mission
+│
+├── 📘 03. Product Requirement Document (PRD)
+│
+├── 📘 04. Software Requirement Specification (SRS)
+│
+├── 📘 05. UI/UX Design System
+│
+├── 📘 06. Brand Guidelines
+│
+├── 📘 07. Information Architecture
+│
+├── 📘 08. Navigation System
+│
+├── 📘 09. Component Library
+│
+├── 📘 10. Android Architecture
+│
+├── 📘 11. Folder Structure
+│
+├── 📘 12. Coding Standards
+│
+├── 📘 13. Git Workflow
+│
+├── 📘 14. Security
+│
+├── 📘 15. Permissions
+│
+├── 📘 16. Performance
+│
+├── 📘 17. Testing
+│
+├── 📘 18. Release Plan
+│
+├── 📘 19. Future Roadmap
+│
+└── 📘 20. Changelog
