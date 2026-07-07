@@ -7,6 +7,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun EmptyState(
@@ -19,8 +21,11 @@ fun EmptyState(
     ) {
         Text(
             text = message,
-            style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            style = MaterialTheme.typography.titleMedium.copy(
+                fontWeight = FontWeight.Medium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+            ),
+            textAlign = TextAlign.Center
         )
     }
 }

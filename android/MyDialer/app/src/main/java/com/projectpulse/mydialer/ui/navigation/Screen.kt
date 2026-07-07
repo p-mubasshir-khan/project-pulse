@@ -18,8 +18,7 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
 
 val bottomNavItems = listOf(
     Screen.Recents,
-    Screen.Contacts,
     Screen.DialPad,
-    Screen.Favorites,
-    Screen.Settings
+    Screen.Contacts,
+    Screen.Favorites
 )
