@@ -18,7 +18,7 @@ class DeviceContactsRepository(private val context: Context) : ContactsRepositor
         val contentResolver = context.contentResolver
         
         val projection = arrayOf(
-            ContactsContract.CommonDataKinds.Phone.CONTACT_ID,
+            ContactsContract.CommonDataKinds.Phone._ID,
             ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
             ContactsContract.CommonDataKinds.Phone.NUMBER,
             ContactsContract.CommonDataKinds.Phone.TYPE,
@@ -35,7 +35,7 @@ class DeviceContactsRepository(private val context: Context) : ContactsRepositor
         )
 
         cursor?.use {
-            val idIndex = it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID)
+            val idIndex = it.getColumnIndex(ContactsContract.CommonDataKinds.Phone._ID)
             val nameIndex = it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
             val numberIndex = it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
             val typeIndex = it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE)

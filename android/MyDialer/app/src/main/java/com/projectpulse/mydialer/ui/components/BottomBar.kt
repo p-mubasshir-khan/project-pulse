@@ -111,23 +111,27 @@ fun BottomNavItem(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Icon(
-                imageVector = screen.icon,
-                contentDescription = screen.title,
-                tint = contentColor,
-                modifier = Modifier.size(24.dp)
-            )
-            if (isSelected) {
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = screen.title,
-                    color = contentColor,
-                    style = MaterialTheme.typography.labelSmall.copy(
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        letterSpacing = 0.5.sp
-                    )
+            screen.icon?.let { icon ->
+                Icon(
+                    imageVector = icon,
+                    contentDescription = screen.title,
+                    tint = contentColor,
+                    modifier = Modifier.size(24.dp)
                 )
+            }
+            if (isSelected) {
+                screen.title?.let { title ->
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = title,
+                        color = contentColor,
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            letterSpacing = 0.5.sp
+                        )
+                    )
+                }
             }
         }
     }

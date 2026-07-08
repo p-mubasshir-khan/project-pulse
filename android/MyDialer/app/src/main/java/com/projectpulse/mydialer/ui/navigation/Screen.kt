@@ -8,12 +8,18 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 
-sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
+sealed class Screen(val route: String, val title: String? = null, val icon: ImageVector? = null) {
     object Recents : Screen("recents", "Recents", Icons.Default.Call)
     object Contacts : Screen("contacts", "Contacts", Icons.Default.Contacts)
     object DialPad : Screen("dialpad", "Dial Pad", Icons.Default.Dialpad)
     object Favorites : Screen("favorites", "Favorites", Icons.Default.Favorite)
     object Settings : Screen("settings", "Settings", Icons.Default.Settings)
+    
+    object Main : Screen("main")
+    
+    object ContactDetails : Screen("contact_details/{contactId}") {
+        fun createRoute(contactId: Long) = "contact_details/$contactId"
+    }
 }
 
 val bottomNavItems = listOf(

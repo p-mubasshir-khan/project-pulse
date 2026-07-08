@@ -36,6 +36,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.draw.shadow
+import androidx.navigation.NavController
+import com.projectpulse.mydialer.ui.screens.contacts.ContactsViewModel
 import com.projectpulse.mydialer.core.theme.BorderGlass
 import com.projectpulse.mydialer.core.theme.PrimaryBlue
 import com.projectpulse.mydialer.core.theme.SurfaceGlass
@@ -49,18 +51,20 @@ import com.projectpulse.mydialer.ui.screens.recents.RecentsScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavController, contactsViewModel: ContactsViewModel) {
     val pagerState = rememberPagerState(initialPage = 1) { bottomNavItems.size }
     var showMenu by remember { mutableStateOf(false) }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         topBar = {
-            TopAppBarPill(
-                onMenuClick = { showMenu = true },
-                showMenu = showMenu,
-                onDismissMenu = { showMenu = false }
-            )
+            if (bottomNavItems[pagerState.currentPage] != Screen.Contacts) {
+                TopAppBarPill(
+                    onMenuClick = { showMenu = true },
+                    showMenu = showMenu,
+                    onDismissMenu = { showMenu = false }
+                )
+            }
         },
         bottomBar = {
             Box(
@@ -85,7 +89,10 @@ fun MainScreen() {
                 when (bottomNavItems[page]) {
                     Screen.Recents -> RecentsScreen()
                     Screen.DialPad -> DialPadScreen()
-                    Screen.Contacts -> ContactsScreen()
+                    Screen.Contacts -> ContactsScreen(
+                        navController = navController,
+                        viewModel = contactsViewModel
+                    )
                     Screen.Favorites -> FavoritesScreen()
                     else -> {}
                 }
